@@ -22,6 +22,12 @@
             fuelType: 'diesel'
         };
 
+        let smallTruck = {
+            engineSize: 6,
+            displacement: 4,
+            fuelType: 'regular'
+        }
+
         function getEfficiencyRating (vehicle) {
             let rating = 0;
 
@@ -43,11 +49,12 @@
                     break;
                 // to be filled in after break
                 default:
+                    rating = 0;
             }
 
             if (vehicle.fuelType == 'diesel') {
                 // increment += ++
-                rating = rating + 1;  
+                rating = rating + 1; 
             }
 
             // > 10 then make it 10
@@ -63,7 +70,9 @@
         // expect a 9
         let smallCarRating = getEfficiencyRating(smallCar);
 
-        console.log(smallCarRating);
+        let smallTruckRating = getEfficiencyRating(smallTruck);
+
+        console.log({smallCarRating, smallTruckRating});
 
 
     </script>

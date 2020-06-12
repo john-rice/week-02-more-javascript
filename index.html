@@ -13,9 +13,6 @@
 
         console.log(isUserInAttendance);
 
-        // initialize an empty array
-        let cars = [];
-
         let smallCar = {
             engineSize: 4,
             displacement: 2,
@@ -26,7 +23,12 @@
             engineSize: 6,
             displacement: 4,
             fuelType: 'regular'
-        }
+        };
+
+        // initialize empty array
+        let vehicles = [];
+        vehicles.push(smallCar);
+        vehicles.push(smallTruck);
 
         function getEfficiencyRating (vehicle) {
             let rating = 0;
@@ -62,17 +64,29 @@
             return rating;
         }
 
-
+        // examples of assigning a variable to some other variable
         let vehicle = smallCar;
         let something = smallCar;
 
-        // send a variable value into the function
-        // expect a 9
-        let smallCarRating = getEfficiencyRating(smallCar);
+        // to visualize the data, we log it out
+        console.log({vehicles});
 
-        let smallTruckRating = getEfficiencyRating(smallTruck);
+        // forEach takes a function as its paramater
+        // for each item in vehicles the function will execute for 
+        //  the vehicle 
+        // TAKES FOREVER TO UNDERSTAND THIS!!!
+        vehicles.forEach(function (vehicle) {
+            let result = getEfficiencyRating(vehicle);
+            console.log({result});
+        });
 
-        console.log({smallCarRating, smallTruckRating});
+        // alternative looping method
+        for (let index = 0; index < vehicles.length; index = index + 1) {
+            console.log('array index:' + index);
+            console.log(vehicles[index]);
+        }
+
+        
 
 
     </script>

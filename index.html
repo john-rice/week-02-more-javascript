@@ -9,10 +9,50 @@
         let tonightsAttendees = ['Alpha', 'Alvin', 'Ziedah', 'Sharon'];
         const currentUser = 'Alpha';
 
-
         const isUserInAttendance = tonightsAttendees.includes(currentUser);
 
         console.log(isUserInAttendance);
+
+        // initialize an empty array
+        let cars = [];
+
+        let smallCar = {
+            engineSize: 4,
+            displacement: 2,
+            fuelType: 'diesel'
+        };
+
+        function getEfficiencyRating (vehicle) {
+            let rating = 0;
+
+            if (vehicle.engineSize < 5) {
+                rating = 8;
+            }
+
+            if (vehicle.engineSize >= 5 && vehicle.engineSize < 7) {
+                rating = 6;
+            }
+
+            if (vehicle.fuelType == 'diesel') {
+                // increment += ++
+                rating = rating + 1;  
+            }
+
+            // > 10 then make it 10
+
+            return rating;
+        }
+
+
+        let vehicle = smallCar;
+        let something = smallCar;
+
+        // send a variable value into the function
+        // expect a 9
+        let smallCarRating = getEfficiencyRating(smallCar);
+
+        console.log(smallCarRating);
+
 
     </script>
 
